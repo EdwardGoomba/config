@@ -23,6 +23,7 @@ Here are a list of all the extensions I use. This is an ever-changing setup, so 
 - [npm Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.npm-intellisense)
 - [open in browser](https://marketplace.visualstudio.com/items?itemName=techer.open-in-browser)
 - [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense)
+- [PHP intellisense]
 - [Polacode](https://marketplace.visualstudio.com/items?itemName=pnp.polacode)
 - [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
 - [Project Manager](https://marketplace.visualstudio.com/items?itemName=alefragnani.project-manager)

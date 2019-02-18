@@ -2,7 +2,7 @@
 
 My Setup
 
-Dev
+##Dev
 
 Editor:
 Visual Studio Code
@@ -15,12 +15,10 @@ React Dev Tools
 Redux Dev Tools
 Dev Tools Author
 
-Design
-
+##Design
 Sketch
 
-Machine
-
+##Machine
 Adobe
 Alfred
 Chrome
@@ -34,4 +32,3 @@ Marked (http://marked2app.com/)
 Rocket (https://matthewpalmer.net/rocket/)
 Slack
 Spark
-Text Expander
