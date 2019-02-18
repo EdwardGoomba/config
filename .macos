@@ -5,7 +5,7 @@
 # And further modified by Tiffany White
 # And then modified some more by Edward Danilyuk
 # Run without downloading:
-# curl https://raw.githubusercontent.com/twhite96/dot-files/master/.macos | bash
+# curl https://raw.githubusercontent.com/EdwardGoomba/config/master/.macos | bash
 
 # Close any open System Preferences panes, to prevent them from overriding
 # settings we’re about to change
@@ -23,8 +23,13 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 echo "Hello $(whoami)! Let's get you set up."
 
+# setup folder for code
 echo "mkdir -p $(HOME)/dev"
 mkdir -p "$(HOME)/dev"
+
+# setup folder for design
+echo "mkdir -p $(HOME)/design"
+mkdir -p "$(HOME)/design"
 
 echo "installing homebrew"
 # install homebrew https://brew.sh
@@ -32,13 +37,10 @@ echo "installing homebrew"
 
 echo "brew installing stuff"
 # hub: a github-specific version of git
-# libdvdcss: makes handbreak capable of ripping DVDs
 # ripgrep: rg is faster than alternatives
-# imagemagick: eventually I will need this for something
-# ffmpeg: eventually I'll need this for something
 # tree: really handy for listing out directories in text
 # bat: A cat(1) clone with syntax highlighting and Git integration.
-brew install git hub libdvdcss ripgrep imagemagick bash-completion watchman tree bat
+brew install git hub ripgrep bash-completion watchman tree bat
 
 # zsh: z shell
 # cask for installing apps with brew
@@ -51,59 +53,59 @@ brew install zsh caskroom/cask/brew-cask font-hack-nerd-font rbenv openssl exa f
 # yarn: without node because we'll get it from installing n later
 brew install yarn --without-node
 
+# install node
 echo "installing node (via n-install)"
 curl -L https://git.io/n-install | bash
 
 echo "node --version: $(node --version)"
 echo "npm --version: $(npm --version)"
 
+# install oh my zsh
 echo "installing oh my zsh"
-
-# Install Oh My Zsh
 curl -L http://install.ohmyz.sh | sh
 
 # echo "installing a few global npm packages"
+# add any global packages you use
 # npm install --global serve diff-so-fancy fkill-cli npm-quick-run semantic-release-cli
 
+# Install additional apps with brew cask
 echo "installing apps with brew cask"
 brew cask install alfred google-chrome firefox bettertouchtool \
-bartender google-drive-file-stream visual-studio-code 1password dash \
-screenflow virtualbox skype rocket \
-sublime-text vlc discord obs handbrake zoomus betterzip sip \
+bartender visual-studio-code dash \
+screenflow virtualbox rocket \
+vlc discord obs betterzip sip \
 qlcolorcode qlmarkdown qlstephen quicklook-json webpquicklook \
-suspicious-package qlvideo dropbox iterm2 hyperdock insomnia franz cloudapp  \
+suspicious-package dropbox iterm2 hyperdock insomnia franz cloudapp  \
 fantastical dash ubersicht transmission private-internet-access telegram \
 cardhop gray nightowl timing backblaze keyboard-maestro
 
 echo "Generating an RSA token for GitHub"
 mkdir -p ~/.ssh
-ssh-keygen -t rsa -b 4096 -C "hey@tiffanyrwhite.com"
+ssh-keygen -t rsa -b 4096 -C "waffles@madebyedward.com"
 echo "Host *\n AddKeysToAgent yes\n UseKeychain yes\n IdentityFile ~/.ssh/id_rsa" | tee ~/.ssh/config
 eval "$(ssh-agent -s)"
 echo "run 'pbcopy < ~/.ssh/id_rsa.pub' and paste that into GitHub"
 
-echo "cloning dotfiles"
-git clone git@github.com:twhite96/dot-files.git "${HOME}/dotfiles"
-ln -s "${HOME}/dotfiles/.bash_profile" "${HOME}/.bash_profile"
-ln -s "${HOME}/dotfiles/.zshrc" "${HOME}/.zshrc"
-# ln -s "${HOME}/dotfiles/.my_bin" "${HOME}/.my_bin"
-# ln -s "${HOME}/dotfiles/.vimrc" "${HOME}/.vimrc"
-# ln -s "${HOME}/dotfiles/.vimrc-parts" "${HOME}/.vimrc-parts"
+echo "cloning config"
+git clone git@github.com:EdwardGoomba/config.git "${HOME}/dev/config"
+ln -s "${HOME}/dev/config/.bash_profile" "${HOME}/.bash_profile"
+ln -s "${HOME}/dev/config/.zshrc" "${HOME}/.zshrc"
 
 echo "making system modifications:"
 
 # Make Chrome Two finger swipe for back and forward
-# defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool TRUE
+defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool TRUE
 
 ###############################################################################
 # General UI/UX                                                               #
 ###############################################################################
 
 # Set computer name (as done via System Preferences → Sharing)
-#sudo scutil --set ComputerName "0x6D746873"
-#sudo scutil --set HostName "0x6D746873"
-#sudo scutil --set LocalHostName "0x6D746873"
-#sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "0x6D746873"
+# TODO: set name later - allows for multiple setups
+# sudo scutil --set ComputerName "0x6D746873"
+# sudo scutil --set HostName "0x6D746873"
+# sudo scutil --set LocalHostName "0x6D746873"
+# sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "0x6D746873"
 
 # Set standby delay to 24 hours (default is 1 hour)
 sudo pmset -a standbydelay 86400
@@ -130,9 +132,6 @@ sudo pmset -a standbydelay 86400
 # Disable smooth scrolling
 # (Uncomment if you’re on an older Mac that messes up the animation)
 #defaults write NSGlobalDomain NSScrollAnimationEnabled -bool false
-
-# Increase window resize speed for Cocoa applications
-# defaults write NSGlobalDomain NSWindowResizeTime -float 0.001
 
 # Expand save panel by default
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
@@ -233,10 +232,10 @@ defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 # defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
 # Trackpad: map bottom right corner to right-click
-# defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadCornerSecondaryClick -int 2
-# defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightClick -bool true
-# defaults -currentHost write NSGlobalDomain com.apple.trackpad.trackpadCornerClickBehavior -int 1
-# defaults -currentHost write NSGlobalDomain com.apple.trackpad.enableSecondaryClick -bool true
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadCornerSecondaryClick -int 2
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightClick -bool true
+defaults -currentHost write NSGlobalDomain com.apple.trackpad.trackpadCornerClickBehavior -int 1
+defaults -currentHost write NSGlobalDomain com.apple.trackpad.enableSecondaryClick -bool true
 
 # Disable “natural” (Lion-style) scrolling
 # defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
@@ -290,7 +289,7 @@ defaults write com.apple.screensaver askForPasswordDelay -int 0
 defaults write com.apple.screencapture location -string "${HOME}/Desktop"
 
 # Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
-# defaults write com.apple.screencapture type -string "png"
+defaults write com.apple.screencapture type -string "png"
 
 # Disable shadow in screenshots
 # defaults write com.apple.screencapture disable-shadow -bool true
