@@ -1,16 +1,20 @@
+# general ignores
 *~
 *.swp
 tmp/
-npm-debug.log
 .DS_Store
-
-
-.build/*
-.next
+.env
 .vscode/
+
+# js ignores
+npm-debug.log
 node_modules/
 .coverage
-.env
+
+# nextjs specific
+.build/*
 .next
 out
 
+# wordpress specific
+config.codekit3

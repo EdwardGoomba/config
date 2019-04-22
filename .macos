@@ -24,12 +24,12 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 echo "Hello $(whoami)! Let's get you set up."
 
 # setup folder for code
-echo "mkdir -p $(HOME)/dev"
-mkdir -p "$(HOME)/dev"
+echo "mkdir -p ${HOME}/dev"
+mkdir -p "${HOME}/dev"
 
 # setup folder for design
-echo "mkdir -p $(HOME)/design"
-mkdir -p "$(HOME)/design"
+echo "mkdir -p ${HOME}/design"
+mkdir -p "${HOME}/design"
 
 echo "installing homebrew"
 # install homebrew https://brew.sh
@@ -49,13 +49,9 @@ brew install git hub ripgrep bash-completion watchman tree bat
 # openssl for most everything
 # exa for ls beautification
 # fzf for fuzzy search
-brew install zsh caskroom/cask/brew-cask font-hack-nerd-font rbenv openssl exa fzf
+brew install zsh cask rbenv openssl exa fzf
 # yarn: without node because we'll get it from installing n later
-brew install yarn --without-node
-
-# install node
-echo "installing node (via n-install)"
-curl -L https://git.io/n-install | bash
+brew install yarn
 
 echo "node --version: $(node --version)"
 echo "npm --version: $(npm --version)"
@@ -70,17 +66,18 @@ curl -L http://install.ohmyz.sh | sh
 # echo "installing a few global npm packages"
 # add any global packages you use
 # npm install --global serve diff-so-fancy fkill-cli npm-quick-run semantic-release-cli
+# i personally do not like global installs
 
 # Install additional apps with brew cask
 echo "installing apps with brew cask"
-brew cask install alfred google-chrome firefox bettertouchtool \
-vanilla visual-studio-code dash \
-screenflow virtualbox rocket \
+brew cask install alfred google-chrome firefox \
+visual-studio-code dash \
+virtualbox rocket \
 vlc discord obs \
 qlcolorcode qlmarkdown qlstephen quicklook-json webpquicklook \
-suspicious-package dropbox iterm2 hyperdock caffeine franz cloudapp  \
-fantastical dash telegram \
-cardhop gray nightowl timing
+suspicious-package iterm2 hyperdock caffeine cloudapp  \
+dash \
+cardhop nightowl timing
 
 echo "Generating an RSA token for GitHub"
 mkdir -p ~/.ssh
@@ -114,7 +111,7 @@ defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool TRUE
 sudo pmset -a standbydelay 86400
 
 # Disable the sound effects on boot
-# sudo nvram SystemAudioVolume=" "
+sudo nvram SystemAudioVolume=" "
 
 # Disable transparency in the menu bar and elsewhere on Yosemite
 # defaults write com.apple.universalaccess reduceTransparency -bool true
@@ -123,7 +120,7 @@ sudo pmset -a standbydelay 86400
 # defaults write NSGlobalDomain AppleHighlightColor -string "0.764700 0.976500 0.568600"
 
 # Set sidebar icon size to medium
-# defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 2
+defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 2
 
 # Always show scrollbars
 # defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
@@ -317,7 +314,6 @@ defaults write com.apple.finder QuitMenuItem -bool true
 # Set Desktop as the default location for new Finder windows
 # For other paths, use `PfLo` and `file:///full/path/here/`
 defaults write com.apple.finder NewWindowTarget -string "PfDe"
-defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/Documents/Dropbox"
 
 # Show icons for hard drives, servers, and removable media on the desktop
 defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
