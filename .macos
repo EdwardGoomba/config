@@ -83,8 +83,13 @@ nightowl timing
 echo "Generating an RSA token for GitHub"
 mkdir -p ~/.ssh
 ssh-keygen -t rsa -b 4096 -C "waffles@madebyedward.com"
-echo "Host *\n AddKeysToAgent yes\n UseKeychain yes\n IdentityFile ~/.ssh/id_rsa" | tee ~/.ssh/config
 eval "$(ssh-agent -s)"
+Host *
+  AddKeysToAgent yes
+  UseKeychain yes
+  IdentityFile ~/.ssh/id_rsa
+
+ssh-add -K ~/.ssh/id_rsa
 echo "run 'pbcopy < ~/.ssh/id_rsa.pub' and paste that into GitHub"
 
 echo "cloning config"
@@ -676,7 +681,7 @@ killall mds > /dev/null 2>&1
 # Make sure indexing is enabled for the main volume
 sudo mdutil -i on / > /dev/null
 # Rebuild the index from scratch
-sudo mdutil -E / > /dev/null
+s
 
 ###############################################################################
 # Terminal & iTerm 2                                                          #
