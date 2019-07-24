@@ -74,8 +74,7 @@ curl -L http://install.ohmyz.sh | sh
 # Install additional apps with brew cask
 echo "installing apps with brew cask"
 brew cask install alfred google-chrome firefox \
-visual-studio-code \
-virtualbox rocket \
+visual-studio-code hyper virtualbox rocket \
 vlc discord obs \
 qlcolorcode qlmarkdown qlstephen quicklook-json webpquicklook \
 suspicious-package iterm2 caffeine cloudapp  \
