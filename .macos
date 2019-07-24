@@ -53,6 +53,9 @@ brew install zsh cask rbenv openssl exa fzf
 # yarn: without node because we'll get it from installing n later
 brew install yarn
 
+# install nvm
+brew install nvm
+
 echo "node --version: $(node --version)"
 echo "npm --version: $(npm --version)"
 
@@ -71,13 +74,12 @@ curl -L http://install.ohmyz.sh | sh
 # Install additional apps with brew cask
 echo "installing apps with brew cask"
 brew cask install alfred google-chrome firefox \
-visual-studio-code dash \
+visual-studio-code \
 virtualbox rocket \
 vlc discord obs \
 qlcolorcode qlmarkdown qlstephen quicklook-json webpquicklook \
 suspicious-package iterm2 hyperdock caffeine cloudapp  \
-dash \
-cardhop nightowl timing
+nightowl timing
 
 echo "Generating an RSA token for GitHub"
 mkdir -p ~/.ssh
