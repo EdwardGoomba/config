@@ -78,7 +78,7 @@ visual-studio-code \
 virtualbox rocket \
 vlc discord obs \
 qlcolorcode qlmarkdown qlstephen quicklook-json webpquicklook \
-suspicious-package iterm2 hyperdock caffeine cloudapp  \
+suspicious-package iterm2 caffeine cloudapp  \
 nightowl timing
 
 echo "Generating an RSA token for GitHub"
