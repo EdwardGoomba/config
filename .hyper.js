@@ -7,6 +7,7 @@ module.exports = {
     fontFamily: '"Operator Mono", "Inconsolata for Powerline", monospace',
     cursorShape: 'BLOCK',
     wickedBorder: true,
+    wickedBorderColor: '#ffc600',
     padding: '10px',
     shell: '/bin/zsh'
   },
