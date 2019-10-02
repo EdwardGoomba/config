@@ -11,12 +11,6 @@ export ZSH="/Users/edanilyuk/.oh-my-zsh"
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="cobalt2"
 
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -71,24 +65,11 @@ ZSH_THEME="cobalt2"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git node brew osx extract)
 
+#----------
+# source
+#----------
 source $ZSH/oh-my-zsh.sh
-
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
+source ~/.nvm/nvm.sh
 
 #----------
 # z
@@ -102,10 +83,3 @@ source $ZSH/oh-my-zsh.sh
 #----------
 # paths
 #----------
-
-export PATH=$HOME/bin:/usr/local/bin:$PATH
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
-export PATH="/usr/local/sbin:$PATH"
-export PATH=/usr/local/share/python:$PATH
