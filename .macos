@@ -50,7 +50,7 @@ brew install git hub ripgrep bash-completion watchman tree bat
 # openssl: for most everything
 # exa: for ls beautification
 # fzf: for fuzzy search
-brew install zsh zsh-completion zsh-syntax-highlighting cask font-hack-nerd-font rbenv openssl exa fzf
+brew install zsh zsh-completion zsh-syntax-highlighting cask font-hack-nerd-font rbenv openssl exa fzf z
 
 # yarn: without node because we'll get it from installing n later
 brew install yarn
@@ -81,6 +81,7 @@ brew install mysql postgresql redis
 
 echo "install global npm packages"
 # add any global packages you use
+npm install --global trash-cli
 
 # Install additional apps with brew cask
 echo "installing apps with brew cask"
@@ -110,11 +111,4 @@ ln -s "${HOME}/dev/config/.zshrc" "${HOME}/.zshrc"
 
 # https://github.com/wesbos/hyperterm-cobalt2-theme
 # https://github.com/wesbos/Cobalt2-iterm/
-
-
-printf "TODO:\n\
-Restart Terminal.app\n\
-copy git config from your backup/re-login \n\
-copy .npmrc from your backup/re-login \n\
-login to literally everything \n\
-"
+# https://github.com/rupa/z/blob/master/z.sh

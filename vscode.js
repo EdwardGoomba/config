@@ -1,5 +1,5 @@
 {
-  "editor.fontFamily": "Operator Mono, Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontFamily": "Operator Mono, Inconsolata for Powerline, Menlo, Monaco, 'Courier New', monospace",
     "editor.fontSize": 22,
       "editor.lineHeight": 40,
         "editor.quickSuggestionsDelay": 500,
