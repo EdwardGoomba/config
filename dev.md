@@ -1,6 +1,6 @@
 # Dev Learning Go To
 
-Resources
+## Resources
 Wes Bos
 Tyler McGinnis
 Egghead.io
@@ -8,7 +8,7 @@ Treehouse
 CodeCademy
 FreeCodeCamp
 
-This is the order I would reccomend anyone learn things who wants to be a JS focused Front End Dev
+This is the order I would recommend anyone learn things who wants to be a JS focused Front End Dev.
 
 Flexbox: [https://flexbox.io/]
 

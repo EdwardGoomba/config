@@ -26,11 +26,10 @@ Alfred
 Chrome
 Docker
 Dropbox
-Harvest
 Lastpass
-Local by Flywheel
 Magnet
-Marked (http://marked2app.com/)
+Notion
 Rocket (https://matthewpalmer.net/rocket/)
 Slack
-Spark
+Standard Notes
+Things
