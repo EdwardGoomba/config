@@ -1,3 +1,6 @@
+## env
+.env
+
 # build output
 dist
 .next
@@ -20,10 +23,13 @@ coverage
 # test output
 test/**/out*
 test/**/next-env.d.ts
-.DS_Store
 
 # Editors
 **/.idea
+.vscode
 
 # example output
 examples/**/out
+
+## mac
+.DS_Store
