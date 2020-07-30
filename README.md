@@ -10,11 +10,10 @@ Visual Studio Code
 Terminal:
 Hyper
 
-Firefox
+Firefox Dev Edition
 Chrome
 React Dev Tools
 Redux Dev Tools
-Dev Tools Author
 
 ##Design
 Sketch
@@ -24,11 +23,10 @@ Figma
 Adobe
 Alfred
 Chrome
-Docker
+Dashlane
 Dropbox
-Lastpass
+Firebox
 Magnet
-Notion
 Rocket (https://matthewpalmer.net/rocket/)
 Slack
 Standard Notes

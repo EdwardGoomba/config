@@ -4,6 +4,7 @@
 # build output
 dist
 .next
+built-lambda
 
 # dependencies
 node_modules
