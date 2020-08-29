@@ -23,7 +23,7 @@ Figma
 Adobe
 Alfred
 Chrome
-Dashlane
+1Password
 Dropbox
 Firebox
 Magnet

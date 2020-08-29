@@ -1,3 +1,7 @@
+#------
+# Mac OS setup
+#------
+
 #!/usr/bin/env bash
 
 # by Edward Danilyuk
@@ -44,6 +48,7 @@ brew install git hub ripgrep bash-completion watchman tree bat
 
 # zsh: z shell
 # zsh-completion
+# zsh-syntax-highlighting
 # cask: for installing apps with brew
 # font-hack-nerd-font: for installing nerfonts with colorls for my terminal
 # rbenv: for installing ruby and ruby versions
@@ -58,6 +63,7 @@ brew install yarn
 # install nvm
 brew install nvm
 
+## confirm successfull node and npm install
 echo "node --version: $(node --version)"
 echo "npm --version: $(npm --version)"
 
@@ -67,6 +73,7 @@ brew install ruby
 # install python
 brew install python
 
+# install aws cli
 #brew install awscli
 
 # pip install pipenv
@@ -89,7 +96,7 @@ brew cask install alfred google-chrome firefox \
 visual-studio-code hyper virtualbox rocket \
 vlc discord obs docker \
 qlcolorcode qlmarkdown qlstephen quicklook-json webpquicklook \
-suspicious-package iterm2 caffeine cloudapp  \
+suspicious-package iterm2 caffeine \
 nightowl timing
 
 echo "Generating an RSA token for GitHub"

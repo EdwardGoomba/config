@@ -10,6 +10,10 @@ FreeCodeCamp
 
 This is the order I would recommend anyone learn things who wants to be a JS focused Front End Dev.
 
+HTML
+CSS
+JS
+
 Flexbox: [https://flexbox.io/]
 
 Whats the bare minimum of this tech that you can use right now?
