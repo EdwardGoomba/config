@@ -1,4 +1,3 @@
 ## Design Tools
 
 - Sketch
-- Figma

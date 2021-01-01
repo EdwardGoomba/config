@@ -13,11 +13,9 @@ Hyper
 Firefox Dev Edition
 Chrome
 React Dev Tools
-Redux Dev Tools
 
 ##Design
 Sketch
-Figma
 
 ##Machine
 Adobe
@@ -27,7 +25,6 @@ Chrome
 Dropbox
 Firebox
 Magnet
-Rocket (https://matthewpalmer.net/rocket/)
 Slack
 Standard Notes
 Things

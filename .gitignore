@@ -1,5 +1,6 @@
 ## env
 .env
+next.config.js
 
 # build output
 dist
